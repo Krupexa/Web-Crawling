@@ -1,0 +1,9 @@
+filename = "Lattes.txt"
+            arquivo = open(filename, 'wb')
+            print("procesing:"+response.url)
+            emails= LinkExtractor(allow= r'[\w\.]+@[\w\.]+')
+            for link in emails.extract_links(response):
+                item = KsucrawlingItem()
+                item['emails'] = link.emails
+                arquivo.writelines("%s\n" % link)
+                # re.findall(r'[\w\.]+@[\w\.]+', response.text)
